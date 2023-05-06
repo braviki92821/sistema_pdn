@@ -1,17 +1,18 @@
 version: '3.1'
 services:
   mongodb:
-    image: 'mongo:4.4.2'
+    image: mongo:4.4.2
     container_name: mongodb
     restart: always
     ports:
-          - 27017:27017
+      - 27017:27017
     environment:
-      MONGO_INITDB_ROOT_USERNAME: 'root'
-      MONGO_INITDB_ROOT_PASSWORD: '@PdnService2023@'
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: PdnService2023@
     volumes:
       - ./mongodb/volume:/data/db
       - ./mongodb/mongod.conf:/etc/mongod.conf
       - ./mongodb/log/:/var/log/mongodb/
     command: ["-f", "/etc/mongod.conf"]
+
 
