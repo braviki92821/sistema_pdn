@@ -13,7 +13,5 @@ services:
       - ./mongodb/volume:/data/db
       - ./mongodb/mongod.conf:/etc/mongod.conf
       - ./mongodb/log/:/var/log/mongodb/
-    env_file:
-      - .env
     command: ["-f", "/etc/mongod.conf"]
 
